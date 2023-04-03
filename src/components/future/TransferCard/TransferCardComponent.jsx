@@ -4,7 +4,7 @@ import { useHistory } from "react-router";
 import { useSelector } from "react-redux";
 import { currencies } from "../../../utils/currencies";
 import { getCityById } from "../../../utils/cities";
-import { getCurrency, getLanguage } from "../../../redux/selectors";
+import { getCurrency } from "../../../redux/selectors";
 import { Button, Divider } from "@material-ui/core";
 import { PASSENGER_ROUTE } from "../../../utils/constants";
 import ArrowIcon from "../../../assets/upward-arrow.png";

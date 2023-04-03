@@ -8,7 +8,6 @@ import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import styles from "./CarrierPage.module.css";
 import { uploadTransfer } from "../../services/data-service";
-import { useHistory } from "react-router-dom";
 import {
   Checkbox,
   Container,
@@ -30,7 +29,6 @@ import { useSelector } from "react-redux";
 import { currencies } from "../../utils/currencies";
 import axios from "axios";
 import "yup-phone-lite";
-import { useStyles } from "../../utils/useStyles";
 import { timeZones } from "../../utils/timezones";
 import { getLoading } from "../../redux/selectors";
 import { useDispatch } from "react-redux";
@@ -62,8 +60,8 @@ export default function CarrierPage() {
   const [rideCurrency, setRideCurrency] = useState(cur);
   // const [messenger, setMessenger] = useState();
   // const [nearestCity, setNearestCity] = useState();
-  const [latitude, setLatitude] = useState();
-  const [longitude, setLongitude] = useState();
+  const [latitude] = useState();
+  const [longitude] = useState();
   const [userTimeZone] = useState(() => {
     const timeZone = timeZones.find((tz) => tz.shift === "" + new Date().getTimezoneOffset() / -60);
     return timeZone || timeZones[0];
@@ -132,10 +130,12 @@ export default function CarrierPage() {
     },
   };
 
+/*
   const getCity = (lat, long) => {
     const URL = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${long}&accept-language=en`;
     axios.get(URL).then((response) => console.log("getCity CarrierPAge", response.data));
   };
+ */
 
   // !! Compute Distance Between current city and nearest City in AutoComplete "From".
   const getDefaultCity = () => {
@@ -148,7 +148,10 @@ export default function CarrierPage() {
       if (absLat === elementAbsLat && absLng === elementAbsLng) {
         console.log("est");
       } else {
-        const getDistance = (cityLat, cityLng) => {
+
+
+/*
+ const getDistance = (cityLat, cityLng) => {
           const R = 6371e3;
           const φ1 = (latitude * Math.PI) / 180; // φ, λ in radians
           const φ2 = (cityLat * Math.PI) / 180;
@@ -162,8 +165,6 @@ export default function CarrierPage() {
           return d;
         };
 
-
-/*
         const getNearestCity = (arr) => {
           let lowest = {};
           let temp;
@@ -312,14 +313,15 @@ export default function CarrierPage() {
             // console.log(event.target);
             // console.log(event.target.checked);
             const weekDays = {};
-            Object.keys(props.values.regularTripsDays).map((weekDay) => {
-              weekDays[weekDay] = {
-                selected: event.target.checked,
-                departureTime: props.values.regularTripsDays[weekDay].departureTime,
-              };
-            });
+              Object.keys(props.values.regularTripsDays).forEach((weekDay) => {
+                  weekDays[weekDay] = {
+                      selected: event.target.checked,
+                      departureTime: props.values.regularTripsDays[weekDay].departureTime,
+                  };
+              });
 
-            // console.log("weekdays: ", weekDays);
+
+              // console.log("weekdays: ", weekDays);
             props.setFieldValue("regularTripsDays", weekDays);
           };
 
