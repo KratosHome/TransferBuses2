@@ -27,7 +27,6 @@ import cities_json from "../../utils/cities.json";
 import i18n from "../../i18n";
 import { useSelector } from "react-redux";
 import { currencies } from "../../utils/currencies";
-import axios from "axios";
 import "yup-phone-lite";
 import { timeZones } from "../../utils/timezones";
 import { getLoading } from "../../redux/selectors";
