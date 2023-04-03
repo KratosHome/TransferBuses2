@@ -31,8 +31,7 @@ export const AutoCompleteSection = () => {
 
 	const findCityData = (curCity) => {
 		const result = Object.values(dataNew).filter((item) => {
-			if (item.name === curCity[0].properties.display_name) return item;
-      // return [];
+			return item.name === curCity[0].properties.display_name;
 		});
 		return result[0];
 	};
@@ -136,14 +135,14 @@ export const AutoCompleteSection = () => {
 	const handleClearInputFrom = () => {
 		// dispatch(onChangeHandlerFrom(''));
 		setCityName('');
-		setIsResult(false); 
+		setIsResult(false);
 		setIsFailResult(false);
 	};
 
 	const handleClearInputTo = () => {
 		// dispatch(onChangeHandlerTo(''));
 		setCityNameTo('');
-		setIsResult(false); 
+		setIsResult(false);
 		setIsFailResult(false);
 	};
 	const handleClickResults = () => {
@@ -153,7 +152,7 @@ export const AutoCompleteSection = () => {
 		result.push(findRoutes(cityFromYouTravel, cityToYouTravel));
 		if (
 			result[0] === 'We have not found such a route' ||
-			result[0].length === 0 
+			result[0].length === 0
 			// result[0] === []
 		) {
 			setIsResult(false);

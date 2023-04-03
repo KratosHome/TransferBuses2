@@ -9,7 +9,7 @@ import { useHistory } from 'react-router';
 import { setSidebarAction } from '../../../redux/actions/app-actions';
 import { PASSENGER_ROUTE, DRIVER_ROUTE } from '../../../utils/constants';
 
-export default () => {
+const MenuTrip = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -58,6 +58,6 @@ export default () => {
   );
 }
 
-
+export default MenuTrip
 
 

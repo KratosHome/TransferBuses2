@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core';
 import { createTheme } from '@material-ui/core';
 
 // ! Color of Nav header and Nav Sidebar
-const mainColor = "#536dfe";
+// const mainColor = "#536dfe";
 const mainColorCeapTrip = "#ff5722";
 
 export const useStyles = makeStyles(theme => ({
@@ -266,7 +266,7 @@ export const theme = createTheme({
 //     color: "#fffffe !important",
 //   },
 
- 
+
 //   // !! Cheaptrip commercial.
 
 //   ctDescription: {

@@ -9,7 +9,6 @@ import { getLoading, getTransfersData } from "../../redux/selectors";
 import Transfer from "../Transfer/Transfer";
 import filtersClasses from "../Filter/FilterComponent.module.css";
 import classes from "./PassengerPage.module.css";
-import { useStyles } from "../../utils/useStyles";
 import TransferCardComponent from "../future/TransferCard/TransferCardComponent";
 import { LoadingButton } from "@mui/lab";
 import { Alert } from "@mui/material";

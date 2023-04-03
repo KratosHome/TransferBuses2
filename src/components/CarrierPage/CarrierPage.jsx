@@ -15,7 +15,6 @@ import {
   Dialog,
   DialogActions,
   DialogContent,
-  DialogContentText,
   FormControl,
   FormControlLabel,
   Grid,
@@ -59,13 +58,13 @@ export default function CarrierPage() {
   const cur = useSelector((state) => state.app.currency);
   const lang = useSelector((state) => state.app.lang);
   const loading = useSelector(getLoading).isLoadingNewTransfer;
-  const classes = useStyles();
+  // const classes = useStyles();
   const [rideCurrency, setRideCurrency] = useState(cur);
   // const [messenger, setMessenger] = useState();
   // const [nearestCity, setNearestCity] = useState();
   const [latitude, setLatitude] = useState();
   const [longitude, setLongitude] = useState();
-  const [userTimeZone, setUserTimeZone] = useState(() => {
+  const [userTimeZone] = useState(() => {
     const timeZone = timeZones.find((tz) => tz.shift === "" + new Date().getTimezoneOffset() / -60);
     return timeZone || timeZones[0];
   });
@@ -124,7 +123,7 @@ export default function CarrierPage() {
     setOpen(false);
   };
 
-  const history = useHistory();
+  // const history = useHistory();
   const defaultProps = {
     options: cities,
     getOptionLabel: (option) => {
@@ -162,6 +161,9 @@ export default function CarrierPage() {
           const d = R * c; // in metres
           return d;
         };
+
+
+/*
         const getNearestCity = (arr) => {
           let lowest = {};
           let temp;
@@ -184,6 +186,8 @@ export default function CarrierPage() {
           });
           return lowest;
         };
+        */
+        /*
         let intervals = cities_json.map((element) => {
           return {
             id: element.ID,
@@ -191,13 +195,15 @@ export default function CarrierPage() {
             distanceBetween: getDistance(element.latitude, element.longitude),
           };
         });
+        */
         //console.log(intervals);
       }
       // console.log(intervals);
     });
     // console.log("Nearest City", getNearestCity(intervals));
-  };
 
+  };
+/*
   useEffect(() => {
     let startPos;
     const geoSuccess = function (position) {
@@ -209,7 +215,7 @@ export default function CarrierPage() {
     // geolocation determination is temporary commented out. To turn it on, uncomment the line bellow
     // navigator.geolocation.getCurrentPosition(geoSuccess);
   }, []);
-
+*/
   useEffect(() => {
     if (latitude && longitude) {
       getDefaultCity();

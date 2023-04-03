@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 // import './App.css';
-import { AppRouter, Navbar } from "./components";
+import { AppRouter } from "./components";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { useTranslation } from "react-i18next";
-import { theme, useStyles } from "./utils/useStyles";
+import { theme } from "./utils/useStyles";
 import { StylesProvider } from "@material-ui/core";
 import HeaderComponent from "./components/HeaderComponent/HeaderComponent";
 

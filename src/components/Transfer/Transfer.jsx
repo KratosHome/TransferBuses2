@@ -14,7 +14,6 @@ import { useSelector } from "react-redux";
 import { currencies } from "../../utils/currencies";
 import { Tooltip } from "@material-ui/core";
 import cities from "../../utils/cities.json";
-import { timeZones } from "../../utils/timezones";
 
 export default function Transfer({ transfer }) {
   const globalCurrencyCode = useSelector((state) => state.app.currency);
@@ -33,7 +32,7 @@ export default function Transfer({ transfer }) {
   // console.log("depTime = ", transfer.departureTime);
   // console.log("transfer.timeZone = ", transfer.timeZone);
   //const timeZoneName = timeZones.find(tz => tz.shift === transfer.timeZone)?.name
-  const timeZoneName = "GMT+" + transfer.timeZone + " " + i18n.t("timezone." + transfer.timeZone);
+//  const timeZoneName = "GMT+" + transfer.timeZone + " " + i18n.t("timezone." + transfer.timeZone);
 
   const departureTimeSplit = transfer.departureTime.split(":");
 

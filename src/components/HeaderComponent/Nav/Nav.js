@@ -1,6 +1,4 @@
 import React from 'react';
-import LanguageSelector from "../../LanguageSelector/LanguageSelector";
-import CurrenciesSelector from "../../CurrenciesSelector/CurrenciesSelector";
 import { IconButton } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import { setSidebarAction } from "../../../redux/actions/app-actions";

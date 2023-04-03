@@ -1,4 +1,4 @@
-import { MainPage, PassengerPage, BusPage, CarrierPage, TransferPage } from "../components";
+import { PassengerPage, BusPage, CarrierPage, TransferPage } from "../components";
 import TransferViewComponent from "../components/future/TransferCard/TransferView/TransferViewComponent";
 import { Contacts } from "../pages";
 import { MainPageComponent } from "../components/MainPageComponent/MainPageComponent";

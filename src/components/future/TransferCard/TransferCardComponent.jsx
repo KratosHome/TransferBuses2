@@ -18,7 +18,7 @@ import { months_en } from "../../../utils/months-util";
 export default function TransferCardComponent({ transfer, id }) {
   const globalCurrencyCode = useSelector(getCurrency);
   const history = useHistory();
-  const lang = useSelector(getLanguage);
+  // const lang = useSelector(getLanguage);
   let priceNum;
   let priceToDisplay;
 
@@ -30,9 +30,9 @@ export default function TransferCardComponent({ transfer, id }) {
   console.log("depTime = ", transfer.departureTime);
   console.log("transfer.timeZone = ", transfer.timeZone);
   //const timeZoneName = timeZones.find(tz => tz.shift === transfer.timeZone)?.name
-  const timeZoneName = "GMT+" + transfer.timeZone + " " + i18n.t("timezone." + transfer.timeZone);
+  // const timeZoneName = "GMT+" + transfer.timeZone + " " + i18n.t("timezone." + transfer.timeZone);
 
-  const departureTimeSplit = transfer.departureTime.split(":");
+  // const departureTimeSplit = transfer.departureTime.split(":");
 
   if (currencies.map((cur) => cur.code).includes(transfer.currency)) {
     // IF transfer.currency IS IN THE currencies ARRAY
@@ -94,8 +94,8 @@ export default function TransferCardComponent({ transfer, id }) {
           <img src={WalletIcon} className={classes.icon_style} alt="icon" />
           <span className={classes.text}>{priceToDisplay}</span>
         </div>
-        {transfer.passAParcel && <img src={ParcelIcon} className={classes.icon_style} />}
-        {transfer.isPetsAllowed && <img src={PetsAllowedIcon} className={classes.icon_style} />}
+        {transfer.passAParcel && <img src={ParcelIcon} className={classes.icon_style}  alt="icon"/>}
+        {transfer.isPetsAllowed && <img src={PetsAllowedIcon} className={classes.icon_style} alt="icon" />}
       </div>
       <Divider variant="middle" style={{ margin: "10px" }} />
       <div className={classes.transfer_card_footer}>

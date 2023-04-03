@@ -2,7 +2,6 @@ import i18n from "../../i18n";
 import { useHistory } from "react-router-dom";
 import { Button, Grid, Container, Typography } from "@material-ui/core";
 import { useStyles } from "../../utils/useStyles";
-import Cheaptrip from "../../components/CheaptripCommercial/Cheaptrip";
 
 export default function MainPage() {
   const classes = useStyles();

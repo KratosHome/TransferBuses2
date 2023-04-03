@@ -88,6 +88,7 @@ export async function getNextTransfers(last) {
   }
 }
 
+/*
 async function rewrite(dbFrom, dbTo) {
   const c = await fb.firestore().collection(dbFrom).get();
   c.docs.forEach((v) => {
@@ -97,6 +98,7 @@ async function rewrite(dbFrom, dbTo) {
     console.log("new: ", res);
   });
 }
+ */
 
 // export async function getMyLots(uid){
 //     try{

@@ -1,12 +1,12 @@
 import classes from "../Filter/FilterComponent.module.css";
-import { getCities, getCityByName } from "../../utils/cities";
-import { useDispatch, useSelector } from "react-redux";
-import { Button } from "@material-ui/core";
+import {getCities, getCityByName} from "../../utils/cities";
+import {useDispatch, useSelector} from "react-redux";
+import {Button} from "@material-ui/core";
 import FilterComponent from "../Filter/FilterComponent";
-import { getFilters, getInputFromToCity } from "../../redux/selectors";
-import { inputFromCityAction, inputToCityAction } from "../../redux/actions/inputs-actions";
-import { applyFilterFromCityIdAction } from "../../redux/actions/filters-actions";
-import { getTransfersAction } from "../../redux/actions/transfers-actions";
+import {getInputFromToCity} from "../../redux/selectors";
+import {inputFromCityAction, inputToCityAction} from "../../redux/actions/inputs-actions";
+import {applyFilterFromCityIdAction} from "../../redux/actions/filters-actions";
+import {getTransfersAction} from "../../redux/actions/transfers-actions";
 import i18n from "../../i18n";
 
 export default function FiltersCitiesFrom() {
@@ -48,7 +48,7 @@ export default function FiltersCitiesFrom() {
                 <Button
                     variant="outlined"
                     onClick={handleClearFields}
-                    style={{ marginLeft: "10px" }}
+                    style={{marginLeft: "10px"}}
                 >
                     {i18n.t("Clear")}
                 </Button>

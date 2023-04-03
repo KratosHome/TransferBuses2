@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
-import { Drawer, ListItem, List, ListItemText, Container, IconButton } from '@material-ui/core';
+import { Drawer, ListItem, List, ListItemText, Container } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import { menuData } from '../../../utils/menuData';
 import { useStyles } from '../../../utils/useStyles';
